@@ -16,7 +16,10 @@ def generateVideo_txt(path):
 if __name__ == "__main__":
     print(sys.argv)
     if len(sys.argv) == 2:
-        path = '../../../' + sys.argv[0]
+        path = '../../../' + sys.argv[1]
+        # if not os.path.exists(os.path.dirname(path)):
+        #     raise Exception("Directory does not exist")
+        # else:
         txtName = generateVideo_txt(path=path)
         name = path.split('/')[-2]
         folder = path.split('/')[-1]
