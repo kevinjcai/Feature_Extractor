@@ -15,7 +15,7 @@ def generateVideo_txt(path):
     return txtName
 if __name__ == "__main__":
     print(sys.argv)
-    if len(sys.argv) == 1:
+    if len(sys.argv) == 2:
         path = sys.argv[0]
         if not os.path.exists(os.path.dirname(path)):
             raise Exception("Directory does not exist")
