@@ -22,7 +22,7 @@ if __name__ == "__main__":
             txtName = generateVideo_txt(path=path)
             name = path.split('/')[-2]
             folder = path.split('/')[-1]
-            feature_folder = name + '_' + folder + '_'
+            feature_folder = name + '/' + folder + '_Features'
             command = "python feat_extract.py --data-list {0} --model \
                 i3d_resnet50_v1_kinetics400 --save-dir {1}".format(txtName, feature_folder)
             os.system(command)
