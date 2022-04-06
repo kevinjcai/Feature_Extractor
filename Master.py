@@ -12,9 +12,9 @@ def generateVideo_txt(path):
     isExist = os.path.exists(txtPath)
     if not isExist:
         # Create a new directory because it does not exist 
-        os.makedirs(path)
+        os.makedirs(txtPath)
         print("The new directory is created!")
-    txtName = name + '_holder/' + folder + '_videos.txt'
+    txtName = txtPath + '/' + folder + '_videos.txt'
     with open(txtName, 'w') as filehandle:
         for listitem in dir_list:
             filehandle.write('%s\n' % listitem)
