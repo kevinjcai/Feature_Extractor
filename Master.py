@@ -14,7 +14,7 @@ def generateVideo_txt(path):
             filehandle.write('%s\n' % listitem)
     return txtName
 if __name__ == "__main__":
-    if len(sys.argb) == 1:
+    if len(sys.argv) == 1:
         path = sys.argv[0]
         if not os.path.exists(os.path.dirname(path)):
             raise Exception("Directory does not exist")
@@ -26,3 +26,5 @@ if __name__ == "__main__":
             command = "python feat_extract.py --data-list {0} --model \
                 i3d_resnet50_v1_kinetics400 --save-dir {1}".format(txtName, feature_folder)
             os.system(command)
+    else:
+        raise Exception("Need exactly 1 argument")
