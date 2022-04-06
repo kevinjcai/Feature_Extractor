@@ -7,7 +7,7 @@ def generateVideo_txt(path):
     name = path.split('/')[-2]
     folder = path.split('/')[-1]
     for i in range(len(dir_list)):
-        dir_list[i] = path + dir_list[i]
+        dir_list[i] = path + '/' + dir_list[i]
     txtPath = '/home/kevincai/Feature_Extractor/' + name + '_holder'
     isExist = os.path.exists(txtPath)
     if not isExist:
