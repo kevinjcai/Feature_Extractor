@@ -6,6 +6,7 @@ import logging
 import math
 import gc
 import json
+from tqdm import tqdm
 
 import numpy as np
 import mxnet as mx
@@ -189,7 +190,7 @@ def main(logger):
                                  lazy_init=True)
 
     start_time = time.time()
-    for vid, vline in enumerate(data_list):
+    for vid, vline in tqdm(enumerate(data_list)):
         video_path = vline.split()[0]
         video_name = video_path.split('/')[-1]
         if opt.need_root:
@@ -201,8 +202,8 @@ def main(logger):
         feat_file = '%s_%s_feat.npy' % (model_name, video_name)
         np.save(os.path.join(opt.save_dir, feat_file), video_feat.asnumpy())
 
-        if vid > 0 and vid % opt.log_interval == 0:
-            logger.info('%04d/%04d is done' % (vid, len(data_list)))
+        # if vid > 0 and vid % opt.log_interval == 0:
+        #     logger.info('%04d/%04d is done' % (vid, len(data_list)))
 
     end_time = time.time()
     logger.info('Total feature extraction time is %4.2f minutes' % ((end_time - start_time) / 60))
