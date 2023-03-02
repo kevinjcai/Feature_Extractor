@@ -66,7 +66,7 @@ if __name__ == "__main__":
             valid_vid.append(f"msrvtt-test+{vid}_motion_features.npy")
             valid_vid.append(f"msrvtt-test+{vid}_image_features.npy")
         valid_vid.append(f"i3d_resnet50_v1_kinetics400_{vid}.mp4_feat.npy")
-        valid_vid.append(f"clip_feature_{vid}.mp4.jpg.npy")
+        valid_vid.append(f"{vid}_frames_clip.npy")
         valid_vid.append(f"mae_feature_{vid}.npy")
         valid_vid.append(f"{vid}_audio.wav_features.npy")
         valid_vid.append(f"whisper{num}_feature.npy")
@@ -75,7 +75,7 @@ if __name__ == "__main__":
         # print(valid_vid)
         valid_vids.append(valid_vid)
         counter += 1
-    nameTSV = "MaeMotImaVidClipAudioWhisp_train_test"
+    nameTSV = "New_ClipAudioWhisp_train_test"
     # with open(f'/data/msr_vtt_test/msr_vtt_holder/msr_vtt_train_val_videos_{nameTSV}.tsv', 'wt') as out_file:
     #     tsv_writer = csv.writer(out_file, delimiter='\t')
     #     for vids in valid_vids:
@@ -84,7 +84,7 @@ if __name__ == "__main__":
 
     with open(f'/data/msr_vtt_test/msr_vtt_holder/{nameTSV}_tsv/{nameTSV}_features_train.tsv', 'wt') as out_file:
         tsv_writer = csv.writer(out_file, delimiter='\t')
-        for vids in valid_vids[:6514]+valid_vids[7011:]:
+        for vids in valid_vids[:6514]:
             tsv_writer.writerow(vids)
 
     with open(f'/data/msr_vtt_test/msr_vtt_holder/{nameTSV}_tsv/{nameTSV}_features_val.tsv', 'wt') as out_file:
