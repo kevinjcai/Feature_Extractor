@@ -14,4 +14,4 @@ The following step will require Conda installed. Run the following to create the
 
 Run the below command to run the extractor with the **videos** set to the directory path of of the videos and **output** to where you want the features stored
 
-    python full_extraction.py --videos=/data/msr_vtt/train_val_videos --output=/data/msr_vtt_test/feat_ext
+    python full_extraction.py --videos=video_path --output=output_path
