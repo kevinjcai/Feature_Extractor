@@ -2,7 +2,7 @@
 
 ## Description
 
-This feature extracts video features via an action recognition model in [GluonCV](https://github.com/dmlc/gluon-cv), audio featues usins [panns_interfernce](https://github.com/qiuqiangkong/panns_inference), Mae features [VideoMAE](https://github.com/MCG-NJU/VideoMAE), ACR features using [Whisper](https://github.com/openai/whisper) for transcriptions and [Bert](https://github.com/google-research/bert) for tokenization, and CLIP features using using [CLIP](https://github.com/openai/CLIP). These features will be used to train an audio descriptive captioning moddel.
+This feature extracts video features via an action recognition model in [GluonCV](https://github.com/dmlc/gluon-cv), audio featues usins [panns_interfernce](https://github.com/qiuqiangkong/panns_inference), Mae features [VideoMAE](https://github.com/MCG-NJU/VideoMAE), ASR features using [Whisper](https://github.com/openai/whisper) for transcriptions and [Bert](https://github.com/google-research/bert) for tokenization, and CLIP features using using [CLIP](https://github.com/openai/CLIP). These features will be used to train an audio descriptive captioning moddel.
 
 ## Setup
 
